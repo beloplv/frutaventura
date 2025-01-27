@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4colhi6ia2vf"]
+
+[ext_resource type="Texture2D" uid="uid://b01ors02bn2q5" path="res://assets/background/yellow.png" id="1_vux3k"]
+[ext_resource type="Script" path="res://scripts/background/scrolling_background.gd" id="2_mdkgu"]
+[ext_resource type="PackedScene" uid="uid://b2lm783abrwtl" path="res://scripts/background/background_resources.tscn" id="3_npmr7"]
+
+[node name="ScrollingBackground" type="Sprite2D"]
+texture_repeat = 2
+position = Vector2(320, 180)
+texture = ExtResource("1_vux3k")
+region_enabled = true
+region_rect = Rect2(0, 0, 640, 360)
+script = ExtResource("2_mdkgu")
+speed = 64
+
+[node name="BackgroundResources" parent="." instance=ExtResource("3_npmr7")]

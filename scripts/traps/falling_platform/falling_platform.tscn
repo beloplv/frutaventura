@@ -1,0 +1,219 @@
+[gd_scene load_steps=18 format=3 uid="uid://bkl4iqtuuofyb"]
+
+[ext_resource type="Texture2D" uid="uid://byapl55qanxpu" path="res://assets/traps/falling_platform/off.png" id="1_0ndys"]
+[ext_resource type="Script" path="res://scripts/traps/falling_platform/falling_platform.gd" id="1_qjfhl"]
+[ext_resource type="Texture2D" uid="uid://b7onsckvl40j1" path="res://assets/traps/falling_platform/on.png" id="2_bdu1b"]
+[ext_resource type="Script" path="res://scripts/fsm/finite_state_machine.gd" id="4_violo"]
+[ext_resource type="Script" path="res://scripts/traps/falling_platform/state/falling_platform_on_state.gd" id="5_fgfam"]
+[ext_resource type="Script" path="res://scripts/traps/falling_platform/state/falling_platform_off_state.gd" id="6_gg8k6"]
+[ext_resource type="Texture2D" uid="uid://jeb7jjchbvdb" path="res://assets/others/dust_particle.png" id="7_nvrl3"]
+
+[sub_resource type="Animation" id="Animation_lgcoo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_0ndys")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_kpdm7"]
+resource_name = "off"
+length = 0.050005
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_0ndys")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_uejfh"]
+resource_name = "on"
+length = 0.200005
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_bdu1b")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vjgic"]
+_data = {
+"RESET": SubResource("Animation_lgcoo"),
+"off": SubResource("Animation_kpdm7"),
+"on": SubResource("Animation_uejfh")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ytcw"]
+size = Vector2(32, 5)
+
+[sub_resource type="Curve" id="Curve_d4ya8"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ve5pl"]
+curve = SubResource("Curve_d4ya8")
+
+[sub_resource type="Curve" id="Curve_eq0l2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.966667, 0.351648), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_pww8h"]
+curve = SubResource("Curve_eq0l2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_h6kfc"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(16, 1, 1)
+direction = Vector3(0, -1, 0)
+flatness = 1.0
+initial_velocity_min = 40.0
+initial_velocity_max = 100.0
+scale_over_velocity_max = 100.0
+scale_over_velocity_curve = SubResource("CurveTexture_pww8h")
+alpha_curve = SubResource("CurveTexture_ve5pl")
+
+[node name="FallingPlatform" type="AnimatableBody2D"]
+z_index = 1
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_qjfhl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0ndys")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+callback_mode_process = 0
+libraries = {
+"": SubResource("AnimationLibrary_vjgic")
+}
+autoplay = "off"
+
+[node name="FiniteStateMachine" type="Node" parent="."]
+script = ExtResource("4_violo")
+
+[node name="On" type="Node" parent="FiniteStateMachine"]
+script = ExtResource("5_fgfam")
+
+[node name="Off" type="Node" parent="FiniteStateMachine"]
+script = ExtResource("6_gg8k6")
+
+[node name="Timer" type="Timer" parent="FiniteStateMachine/Off"]
+wait_time = 4.0
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_8ytcw")
+one_way_collision = true
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.5
+one_shot = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(0, 3)
+rotation = 3.14159
+emitting = false
+amount = 15
+process_material = SubResource("ParticleProcessMaterial_h6kfc")
+texture = ExtResource("7_nvrl3")
+
+[node name="DelayTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

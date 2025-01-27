@@ -1,0 +1,1033 @@
+[gd_scene load_steps=41 format=3 uid="uid://cenbfvi0dfui3"]
+
+[ext_resource type="Texture2D" uid="uid://dncioc7q8bct6" path="res://assets/others/transition.png" id="1_0gbqr"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_1htc5"]
+[ext_resource type="PackedScene" uid="uid://yke2rf7rplsb" path="res://scripts/level/level_1.tscn" id="1_vk41l"]
+[ext_resource type="Script" path="res://scripts/menu/start_menu/start_menu.gd" id="2_k11uh"]
+[ext_resource type="Script" path="res://scripts/transition.gd" id="2_lngm2"]
+[ext_resource type="Texture2D" uid="uid://cdoa3v44psi0r" path="res://assets/background/green.png" id="3_42tlv"]
+[ext_resource type="Script" path="res://scripts/menu/parallax_background.gd" id="3_u0tuj"]
+[ext_resource type="PackedScene" uid="uid://b2lm783abrwtl" path="res://scripts/background/background_resources.tscn" id="4_vxcwe"]
+[ext_resource type="FontFile" uid="uid://brcdkyj8iqipm" path="res://assets/text/text-white.png" id="5_pbk13"]
+[ext_resource type="Texture2D" uid="uid://d0mpmc0tfdkk7" path="res://scripts/background/travel-rock-25-1-2025.png" id="7_3twxp"]
+[ext_resource type="Script" path="res://scripts/menu/start_menu/start_label.gd" id="7_07qhf"]
+[ext_resource type="Script" path="res://scripts/menu/start_menu/quit_label.gd" id="8_3d3ws"]
+[ext_resource type="Texture2D" uid="uid://dkhjlcadko8xy" path="res://assets/fruits/bananas.png" id="8_8wyma"]
+[ext_resource type="Script" path="res://scripts/menu/summary/summary.gd" id="8_w8qdx"]
+[ext_resource type="Texture2D" uid="uid://cxmd3n7xxtka5" path="res://assets/fruits/cherries.png" id="9_xx5sw"]
+[ext_resource type="Texture2D" uid="uid://xq1pqu145082" path="res://assets/fruits/kiwi.png" id="10_vlgh7"]
+[ext_resource type="Script" path="res://scripts/world.gd" id="11_elgg5"]
+[ext_resource type="Texture2D" uid="uid://dqmrfh1b0w3u5" path="res://assets/fruits/melon.png" id="11_vntke"]
+[ext_resource type="Texture2D" uid="uid://dxnwtetserpvg" path="res://assets/fruits/orange.png" id="12_c5ak4"]
+[ext_resource type="Texture2D" uid="uid://b6xfcnkiucfuw" path="res://assets/fruits/pineapple.png" id="13_w3ceu"]
+[ext_resource type="Texture2D" uid="uid://20chyv0vmn44" path="res://assets/fruits/strawberry.png" id="14_qrbuw"]
+[ext_resource type="PackedScene" path="res://scripts/level/level_2.tscn" id="20_4x356"]
+[ext_resource type="PackedScene" uid="uid://ckism4c0jw6gr" path="res://scripts/level/level_3.tscn" id="22_1bdfd"]
+[ext_resource type="PackedScene" uid="uid://dtn5n2sykqu21" path="res://scripts/level/level_4.tscn" id="23_ecqu7"]
+[ext_resource type="PackedScene" uid="uid://bkyxc8c0am0bl" path="res://scripts/level/level_5.tscn" id="24_k3rju"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tl0jt"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_j7gkl"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7q5gp"]
+load_path = "res://.godot/imported/apple.png-09c2505951c5ac9d14160fb946b3c9c5.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kev1k"]
+atlas = SubResource("CompressedTexture2D_7q5gp")
+region = Rect2(10, 7, 12, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cc5hl"]
+atlas = ExtResource("8_8wyma")
+region = Rect2(9.03239, 7.85742, 14.0536, 14.1887)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tr72p"]
+atlas = ExtResource("9_xx5sw")
+region = Rect2(9, 9, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jh18g"]
+atlas = ExtResource("10_vlgh7")
+region = Rect2(9, 9, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8kv8"]
+atlas = ExtResource("11_vntke")
+region = Rect2(7, 10, 18, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8em8"]
+atlas = ExtResource("12_c5ak4")
+region = Rect2(9, 9, 17, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idtka"]
+atlas = ExtResource("13_w3ceu")
+region = Rect2(10, 8, 12, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7alj"]
+atlas = ExtResource("14_qrbuw")
+region = Rect2(11, 9, 11, 14)
+
+[sub_resource type="Animation" id="Animation_jtsci"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Slide:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Slide:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -44)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/Base:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/Base:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_em4rf"]
+resource_name = "fade_in"
+length = 0.6
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Slide:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Slide:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-22, -21), Vector2(0, -44)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/Base:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/Base:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_2cgp5"]
+resource_name = "fade_out"
+length = 1.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Slide:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Slide:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-44, 0), Vector2(-44, 0), Vector2(-22, -21)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/Base:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/Base:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3bouj"]
+_data = {
+"RESET": SubResource("Animation_jtsci"),
+"fade_in": SubResource("Animation_em4rf"),
+"fade_out": SubResource("Animation_2cgp5")
+}
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_1htc5")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("3_u0tuj")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(64, 64)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+texture = ExtResource("3_42tlv")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 640, 360)
+
+[node name="BackgroundResources" parent="ParallaxBackground" instance=ExtResource("4_vxcwe")]
+
+[node name="StartMenu" type="CanvasLayer" parent="."]
+script = ExtResource("2_k11uh")
+
+[node name="LevelSelectionLayer" type="CanvasLayer" parent="StartMenu"]
+visible = false
+
+[node name="CenterContainer" type="CenterContainer" parent="StartMenu/LevelSelectionLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="GridContainer" type="GridContainer" parent="StartMenu/LevelSelectionLayer/CenterContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 10
+
+[node name="Button" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button2" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button3" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button4" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button5" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button6" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button7" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button8" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button9" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button10" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button11" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button12" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button13" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button14" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button15" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button16" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button17" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button18" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button19" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button20" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button21" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button22" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button23" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button24" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button25" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button26" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button27" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button28" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button29" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button30" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button31" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button32" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button33" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button34" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button35" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button36" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button49" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button50" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button37" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button46" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button47" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button48" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button38" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button39" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button40" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button41" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button42" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button43" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button44" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="Button45" type="Button" parent="StartMenu/LevelSelectionLayer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("CompressedTexture2D_tl0jt")
+flat = true
+expand_icon = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="StartMenu"]
+offset_left = 319.0
+offset_right = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/normal_font = ExtResource("5_pbk13")
+theme_override_font_sizes/normal_font_size = 45
+text = "123123123"
+
+[node name="TitleContainer" type="MarginContainer" parent="StartMenu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 25
+
+[node name="CenterContainer" type="CenterContainer" parent="StartMenu/TitleContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="TitleLabel" type="Label" parent="StartMenu/TitleContainer/CenterContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_pbk13")
+theme_override_font_sizes/font_size = 45
+text = "frutaventura"
+
+[node name="Travel-rock-25-1-2025" type="Sprite2D" parent="StartMenu/TitleContainer/CenterContainer"]
+position = Vector2(216, 148)
+scale = Vector2(0.360352, 0.328125)
+texture = ExtResource("7_3twxp")
+
+[node name="SelectionContainer" type="MarginContainer" parent="StartMenu"]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -383.0
+offset_top = 53.0
+offset_right = -223.0
+offset_bottom = 53.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 80
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StartMenu/SelectionContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/separation = 10
+
+[node name="StartLabel" type="Label" parent="StartMenu/SelectionContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("5_pbk13")
+theme_override_font_sizes/font_size = 30
+text = "play"
+script = ExtResource("7_07qhf")
+
+[node name="QuitLabel" type="Label" parent="StartMenu/SelectionContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("5_pbk13")
+theme_override_font_sizes/font_size = 30
+text = "salir"
+script = ExtResource("8_3d3ws")
+
+[node name="PauseBackground" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="PauseBackground"]
+modulate = Color(0, 0, 0, 0.0980392)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_j7gkl")
+
+[node name="Summary" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("8_w8qdx")
+
+[node name="ColorRect" type="ColorRect" parent="Summary"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.431373)
+
+[node name="MarginContainer" type="MarginContainer" parent="Summary"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="Summary/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("5_pbk13")
+theme_override_font_sizes/font_size = 50
+text = "frutas"
+
+[node name="GridContainer" type="GridContainer" parent="Summary/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/v_separation = 10
+columns = 5
+
+[node name="Apple" type="TextureRect" parent="Summary/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = SubResource("AtlasTexture_kev1k")
+expand_mode = 3
+
+[node name="AppleLabel" type="Label" parent="Summary/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("5_pbk13")
+theme_override_font_sizes/font_size = 30
+text = ":10"
+
+[node name="Control" type="Control" parent="Summary/MarginContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Banana" type="TextureRect" parent="Summary/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = SubResource("AtlasTexture_cc5hl")
+expand_mode = 3
+
+[node name="BananaLabel" type="Label" parent="Summary/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("5_pbk13")
+theme_override_font_sizes/font_size = 30
+text = ":10"
+
+[node name="Cherries" type="TextureRect" parent="Summary/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = SubResource("AtlasTexture_tr72p")
+expand_mode = 3
+
+[node name="CherriesLabel" type="Label" parent="Summary/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("5_pbk13")
+theme_override_font_sizes/font_size = 30
+text = ":10"
+
+[node name="Control2" type="Control" parent="Summary/MarginContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Kiwi" type="TextureRect" parent="Summary/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = SubResource("AtlasTexture_jh18g")
+expand_mode = 3
+
+[node name="KiwiLabel" type="Label" parent="Summary/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("5_pbk13")
+theme_override_font_sizes/font_size = 30
+text = ":10"
+
+[node name="Melon" type="TextureRect" parent="Summary/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = SubResource("AtlasTexture_y8kv8")
+expand_mode = 3
+
+[node name="MelonLabel" type="Label" parent="Summary/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("5_pbk13")
+theme_override_font_sizes/font_size = 30
+text = ":10"
+
+[node name="Control3" type="Control" parent="Summary/MarginContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Orange" type="TextureRect" parent="Summary/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = SubResource("AtlasTexture_a8em8")
+expand_mode = 3
+
+[node name="OrangeLabel" type="Label" parent="Summary/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("5_pbk13")
+theme_override_font_sizes/font_size = 30
+text = ":10"
+
+[node name="Pineapple" type="TextureRect" parent="Summary/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = SubResource("AtlasTexture_idtka")
+expand_mode = 3
+
+[node name="PineappleLabel" type="Label" parent="Summary/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("5_pbk13")
+theme_override_font_sizes/font_size = 30
+text = ":10"
+
+[node name="Control4" type="Control" parent="Summary/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="Strawberry" type="TextureRect" parent="Summary/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = SubResource("AtlasTexture_y7alj")
+expand_mode = 3
+
+[node name="StrawberryLabel" type="Label" parent="Summary/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("5_pbk13")
+theme_override_font_sizes/font_size = 30
+text = ":10"
+
+[node name="GridContainer2" type="GridContainer" parent="Summary/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="TotalFruitsTextLabel" type="Label" parent="Summary/MarginContainer/GridContainer2"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("5_pbk13")
+theme_override_font_sizes/font_size = 30
+text = "total"
+
+[node name="TotalFruits" type="Label" parent="Summary/MarginContainer/GridContainer2"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("5_pbk13")
+theme_override_font_sizes/font_size = 30
+text = ":10"
+
+[node name="DeathCounterTextLabel" type="Label" parent="Summary/MarginContainer/GridContainer2"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("5_pbk13")
+theme_override_font_sizes/font_size = 30
+text = "vidas"
+
+[node name="DeathCounter" type="Label" parent="Summary/MarginContainer/GridContainer2"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("5_pbk13")
+theme_override_font_sizes/font_size = 30
+text = ":1"
+
+[node name="TransitionLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+visible = false
+script = ExtResource("2_lngm2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TransitionLayer"]
+libraries = {
+"": SubResource("AnimationLibrary_3bouj")
+}
+
+[node name="Control" type="Control" parent="TransitionLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Base" type="TextureRect" parent="TransitionLayer/Control"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(640, 360)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 19200.0
+offset_bottom = 10800.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0gbqr")
+stretch_mode = 1
+
+[node name="Slide" type="TextureRect" parent="TransitionLayer/Control"]
+visible = false
+custom_minimum_size = Vector2(684, 404)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -44.0
+offset_right = 19244.0
+offset_bottom = 10800.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0gbqr")
+stretch_mode = 1
+
+[node name="World" type="Node2D" parent="."]
+script = ExtResource("11_elgg5")
+
+[node name="ResourcePreloader" type="ResourcePreloader" parent="World"]
+resources = [PackedStringArray("level_1", "level_2", "level_3", "level_4", "level_5"), [ExtResource("1_vk41l"), ExtResource("20_4x356"), ExtResource("22_1bdfd"), ExtResource("23_ecqu7"), ExtResource("24_k3rju")]]
